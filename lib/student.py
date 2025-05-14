@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
-from user import User
+from lib.user import User  # Make sure to import from lib.user
 
 class Student(User):
-    
-    def learn(self):
-        pass
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.knowledge = []
+
+    def learn(self, string):
+        self.knowledge.append(string)
